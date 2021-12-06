@@ -36,8 +36,6 @@ public:
     /// the scene is null</returns>
     static int addScene(Scene* scene);
 
-    static void addActorToDeletionList(Actor* actor);
-
     /// <summary>
     /// Finds the instance of the scene given that inside of the array
     /// and removes it
@@ -74,8 +72,6 @@ public:
     /// <param name="actor">The actor that will be deleted.</param>
     static void destroy(Actor* actor);
 
-    void destroyActorsInList();
-
     /// <summary>
     /// Ends the application and closes the window.
     /// </summary>
@@ -106,6 +102,8 @@ private:
     void end();
 
 private:
+    void destroyActorsInList();
+    static void addActorToDeletionList(Actor* actor);
     Camera2D* m_camera;
     static bool m_applicationShouldClose;
     static Scene** m_scenes;
