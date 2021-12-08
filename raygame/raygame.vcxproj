@@ -154,6 +154,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Transform2D.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMovement.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Transform2D.h" />

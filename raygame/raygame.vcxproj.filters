@@ -15,6 +15,9 @@
     <Filter Include="Colliders">
       <UniqueIdentifier>{cc6f4e84-4e7e-44a4-bc4b-c5304081c78a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Images">
+      <UniqueIdentifier>{f9f9996b-166b-464d-91a5-546053132a29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +53,9 @@
     <ClCompile Include="PlayerMovement.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -81,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="PlayerMovement.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

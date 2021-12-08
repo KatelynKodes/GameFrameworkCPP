@@ -2,6 +2,8 @@
 #include "Transform2D.h"
 #include <string.h>
 #include "Collider.h"
+#include "raylib.h"
+
 
 Actor::Actor()
 {
