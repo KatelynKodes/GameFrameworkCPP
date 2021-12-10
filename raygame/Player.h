@@ -23,5 +23,6 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	float m_speed;
+	PlayerMovement m_movementComponent;
 };
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <Matrix3.h>
 #include "Actor.h"
+#include "Player.h"
 #include "ActorArray.h"
 
 class Scene

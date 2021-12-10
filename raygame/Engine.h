@@ -3,6 +3,7 @@
 #include <Vector2.h>
 #include <cmath>
 #include "ActorArray.h"
+
 class Camera2D;
 
 static class Engine

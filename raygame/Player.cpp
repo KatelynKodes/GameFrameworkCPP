@@ -18,5 +18,5 @@ Player::~Player()
 
 void Player::update(float deltaTime)
 {
-
+	m_movementComponent.update(deltaTime);
 }

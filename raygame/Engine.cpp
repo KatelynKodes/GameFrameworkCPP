@@ -26,8 +26,11 @@ void Engine::start()
 	InitWindow(screenWidth, screenHeight, "Intro To C++");
 	SetTargetFPS(0);
 
+	//Declare the scene
+	Scene* startingScene = new Scene();
+
 	//Start the scene
-	m_currentSceneIndex = addScene(new Scene());
+	m_currentSceneIndex = addScene(startingScene);
 	m_scenes[m_currentSceneIndex]->start();
 }
 
