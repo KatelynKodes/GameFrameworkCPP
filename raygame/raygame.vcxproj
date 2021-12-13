@@ -153,6 +153,7 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
@@ -169,12 +170,28 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="InputComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMovement.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="StartingScene.h" />
     <ClInclude Include="Transform2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\MathForGames\Images\bullet.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="..\..\MathForGames\Images\enemy.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="..\..\MathForGames\Images\player.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="raygame.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

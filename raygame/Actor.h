@@ -25,13 +25,13 @@ public:
     /// <summary>
     /// Gets the collider attached to this actor
     /// </summary>
-    Collider** getCollider() { return m_collider; }
+    Collider* getCollider() { return m_collider; }
 
     /// <summary>
     /// Sets this actors collider
     /// </summary>
     /// <param name="collider">The new collider to attach to the actor</param>
-    void setCollider(Collider** collider) { m_collider = collider; }
+    void setCollider(Collider* collider) { m_collider = collider; }
 
     /// <summary>
     /// Gets the name of this actor
@@ -117,7 +117,7 @@ protected:
 private:
     bool m_started;
     Transform2D* m_transform;
-    Collider** m_collider;
+    Collider* m_collider;
     Component** m_components;
     unsigned int m_componentCount;
 };

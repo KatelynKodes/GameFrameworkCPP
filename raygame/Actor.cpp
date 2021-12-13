@@ -55,6 +55,15 @@ Component* Actor::addComponent(Component* component)
         newComponents[i] = m_components[i];
     }
 
+    if (m_componentCount > 1)
+    {
+        delete[] m_components;
+    }
+    else if (m_componentCount == 1)
+    {
+        delete m_components;
+    }
+
     newComponents[m_componentCount] = component;
     m_components = newComponents;
     m_componentCount++;
@@ -91,9 +100,14 @@ bool Actor::removeComponent(Component* component)
 
     if (componentRemoved)
     {
+        delete[] m_components;
         m_components = newArray;
         m_componentCount--;
         delete component;
+    }
+    else
+    {
+        delete[] newArray;
     }
 
     return componentRemoved;
@@ -162,7 +176,7 @@ void Actor::update(float deltaTime)
             m_components[i]->start();
         }
 
-        m_components[i]->update();
+        m_components[i]->update(deltaTime);
     }
 }
 

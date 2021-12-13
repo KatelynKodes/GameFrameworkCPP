@@ -3,27 +3,28 @@
 #include "Transform2D.h"
 
 class PlayerMovement;
+class InputComponent;
+class SpriteComponent;
 
 class Player :
 	public Actor
 {
 public:
 	//Constructors/deconstructors
-	Player() :Actor() {};
-	Player(float x, float y, const char* name, float speed, MathLibrary::Vector2 velocity);
+	Player();
+	Player(float x, float y, const char* name, MathLibrary::Vector2 velocity);
 	~Player();
 
 	//Gets velocity and speed
-	float getSpeed() { return m_speed; }
 	MathLibrary::Vector2 getVelocity() { return m_velocity; }
-	PlayerMovement getMovementComponent() { return m_movementComponent; }
 
 	//update method
+	void start()override;
 	void update(float deltaTime) override;
 
 private:
 	MathLibrary::Vector2 m_velocity;
-	float m_speed;
-	PlayerMovement m_movementComponent;
+	InputComponent* m_inputComponent;
+	SpriteComponent* m_spriteComponent;
 };
 

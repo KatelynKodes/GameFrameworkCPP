@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "raylib.h"
 #include "Transform2D.h"
+#include "StartingScene.h"
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -27,7 +28,7 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Declare the scene
-	Scene* startingScene = new Scene();
+	StartingScene* startingScene = new StartingScene();
 
 	//Start the scene
 	m_currentSceneIndex = addScene(startingScene);
