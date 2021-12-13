@@ -4,7 +4,7 @@ PlayerMovement::PlayerMovement() : Component()
 {
 }
 
-PlayerMovement::PlayerMovement(Player* owner, const char* name, float speed, MathLibrary::Vector2 velocity) : Component(owner, name)
+PlayerMovement::PlayerMovement(const char* name, float speed, MathLibrary::Vector2 velocity) : Component::Component(name)
 {
 	m_speed = speed;
 	m_velocity = velocity;

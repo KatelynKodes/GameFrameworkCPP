@@ -16,6 +16,7 @@ public:
 	//Gets velocity and speed
 	float getSpeed() { return m_speed; }
 	MathLibrary::Vector2 getVelocity() { return m_velocity; }
+	PlayerMovement getMovementComponent() { return m_movementComponent; }
 
 	//update method
 	void update(float deltaTime) override;

@@ -9,8 +9,14 @@ class PlayerMovement :
 {
 public:
 	PlayerMovement() : Component() {};
-	PlayerMovement(Player* owner, const char* name, float speed, MathLibrary::Vector2 velocity) : Component(owner, name) {};
+	PlayerMovement(const char* name, float speed, MathLibrary::Vector2 velocity) : Component::Component(name) {};
 	void update(float deltaTime) override;
+
+	MathLibrary::Vector2 getVelocity() { return m_velocity; }
+	void setVelocity(MathLibrary::Vector2 velocity) { m_velocity = velocity; }
+
+	float getSpeed() { return m_speed; }
+	float setSpeed(float newSpeed) { m_speed = newSpeed; }
 
 private:
 	float m_speed;

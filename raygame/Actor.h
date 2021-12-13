@@ -25,19 +25,53 @@ public:
     /// <summary>
     /// Gets the collider attached to this actor
     /// </summary>
-    Collider* getCollider() { return m_collider; }
+    Collider** getCollider() { return m_collider; }
 
     /// <summary>
     /// Sets this actors collider
     /// </summary>
     /// <param name="collider">The new collider to attach to the actor</param>
-    void setCollider(Collider* collider) { m_collider = collider; }
+    void setCollider(Collider** collider) { m_collider = collider; }
 
     /// <summary>
     /// Gets the name of this actor
     /// </summary>
     /// <returns></returns>
     const char* getName() { return m_name; }
+
+    /// <summary>
+    /// Sets the name of this actor
+    /// </summary>
+    /// <returns></returns>
+    void SetName(const char* newName) { m_name = newName; }
+
+    /// <summary>
+    /// Gets the first component instance attatched to this Actor
+    /// That matches the name
+    /// </summary>
+    /// <param name = "componentName"> The name of the component instance </param>
+    Component* getComponent(const char* componentName);
+
+    /// <summary>
+    /// Adds a component to the end of the component array
+    /// </summary>
+    /// <param name = "component"> The new component to attatch to the actor </param>
+    /// <returns> A refrence to the component added to the array </returns>
+    Component* addComponent(Component* component);
+
+    /// <summary>
+    /// Removes the first instance found that matches the component name
+    /// </summary>
+    /// <param name = "component"> The new component to remove from the actor array </param>
+    /// <returns> A refrence to the component added to the array </returns>
+    bool removeComponent(Component* component);
+
+    /// <summary>
+    /// Adds a component to the end of the component array
+    /// </summary>
+    /// <param name = "componentName"> The new component to attatch to the actor </param>
+    /// <returns> A refrence to the component added to the array </returns>
+    bool removeComponent(const char* componentName);
 
     /// <summary>
     /// Called during the first update after an actor is added to a scene.
@@ -83,6 +117,8 @@ protected:
 private:
     bool m_started;
     Transform2D* m_transform;
-    Collider* m_collider;
+    Collider** m_collider;
+    Component** m_components;
+    unsigned int m_componentCount;
 };
 

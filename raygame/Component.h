@@ -7,24 +7,42 @@ class Component
 public:
 	// Constructors
 	Component();
-	Component(Actor* owner, const char* name);
-	~Component();
+	Component(const char* name);
+	virtual ~Component();
 
-	//Getters
+	/// <summary>
+	/// Gets the name of this component instance
+	/// </summary>
 	const char* getName() { return m_name; }
+
+	/// <summary>
+	/// Gets the owner of this component instance
+	/// </summary>
 	Actor* getOwner() { return m_owner; }
 
-	//S.U.D.E
-	virtual void start();
+	bool getStarted() { return m_started; }
+
+	/// <summary>
+	/// Assigns an owner to a component if it doesn't already have one
+	/// </summary>
+	///<param name = "owner"> the new owner being assigned <\param>
+	void  assignOwner(Actor* owner);
+
+
+	virtual void start() { m_started = true; }
 	virtual void update(float deltaTime);
 	virtual void draw();
 	virtual void end();
+	virtual void onDestroy();
 
-	//OnCollision
+	/// <summary>
+	/// Determines what to do when component collides with an actor
+	/// </summary>
 	virtual void onCollision(Actor* collider);
 
 private:
 	Actor* m_owner;
 	const char* m_name;
+	bool m_started;
 };
 

@@ -157,6 +157,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="StartingScene.cpp" />
     <ClCompile Include="Transform2D.cpp" />
   </ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMovement.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="StartingScene.h" />
     <ClInclude Include="Transform2D.h" />
   </ItemGroup>

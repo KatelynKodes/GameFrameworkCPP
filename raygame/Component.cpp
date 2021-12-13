@@ -2,11 +2,12 @@
 
 Component::Component()
 {
+	m_owner = nullptr;
+	m_name = nullptr;
 }
 
-Component::Component(Actor* owner, const char* name)
+Component::Component(const char* name)
 {
-	m_owner = owner;
 	m_name = name;
 }
 
@@ -16,8 +17,14 @@ Component::~Component()
 	delete m_name;
 }
 
-void Component::start()
+void Component::assignOwner(Actor* owner)
 {
+	if (getOwner())
+	{
+		return;
+	}
+
+	m_owner = owner;
 }
 
 void Component::update(float deltaTime)
@@ -29,6 +36,10 @@ void Component::draw()
 }
 
 void Component::end()
+{
+}
+
+void Component::onDestroy()
 {
 }
 
