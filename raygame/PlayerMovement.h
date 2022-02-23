@@ -9,7 +9,7 @@ class PlayerMovement :
 {
 public:
 	PlayerMovement();
-	PlayerMovement(const char* name, float speed, MathLibrary::Vector2 velocity);
+	PlayerMovement(float speed, MathLibrary::Vector2 velocity);
 	void update(float deltaTime) override;
 
 	MathLibrary::Vector2 getVelocity() { return m_velocity; }

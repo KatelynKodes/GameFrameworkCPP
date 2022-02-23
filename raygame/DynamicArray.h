@@ -10,10 +10,12 @@ public:
 
 	T getItem(int index);
 	int getLength();
+	bool contains(T* item);
 
 	void addItem(T item);
 	void addItems(T items[], int itemsSize);
 	bool removeItem(T item);
+	bool removeItem(int index);
 	void sortItems();
 
 	T operator [](int index);
@@ -55,6 +57,18 @@ template<typename T>
 inline int DynamicArray<T>::getLength()
 {
 	return m_length;
+}
+
+template<typename T>
+inline bool DynamicArray<T>::contains(T* item)
+{
+	for (int i = 0; i < m_length; i++)
+	{
+		if (m_items[i] == item)
+			return true;
+	}
+
+	return false;
 }
 
 template<typename T>
@@ -116,6 +130,36 @@ inline bool DynamicArray<T>::removeItem(T item)
 		m_length--;
 	}
 
+	return itemRemoved;
+}
+
+template<typename T>
+inline bool DynamicArray<T>::removeItem(int index)
+{
+	if (index < 0 || index >= getLength())
+		return false;
+
+	bool itemRemoved = false;
+
+	T* newitemArray = new T * [getLength() - 1];
+	int j = 0;
+
+	for (int i = 0; i < getLength(); i++)
+	{
+		if (i != index)
+		{
+			newitemArray[j] = m_items[i];
+			j++;
+		}
+		else
+		{
+			delete m_items[i];
+			itemRemoved = true;
+		}
+	}
+
+	//Set the old array to be the tempArray
+	m_items = newitemArray;
 	return itemRemoved;
 }
 

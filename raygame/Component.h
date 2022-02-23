@@ -7,13 +7,7 @@ class Component
 public:
 	// Constructors
 	Component();
-	Component(const char* name);
 	virtual ~Component();
-
-	/// <summary>
-	/// Gets the name of this component instance
-	/// </summary>
-	const char* getName() { return m_name; }
 
 	/// <summary>
 	/// Gets the owner of this component instance
@@ -42,7 +36,6 @@ public:
 
 private:
 	Actor* m_owner;
-	const char* m_name;
 	bool m_started;
 };
 

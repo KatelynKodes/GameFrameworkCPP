@@ -26,20 +26,6 @@ Actor::Actor(float x, float y, const char* name = "Actor")
     m_name = name;
 }
 
-Component* Actor::getComponent(const char* componentName)
-{
-    // Iterate through component array
-    for (int i = 0; i < m_componentCount; i++)
-    {
-        //If the name passed through is the same as the component's name...
-        if (strcmp(m_components[i]->getName(), componentName) == 0)
-            // Return the component
-            return m_components[i];
-    }
-
-    return nullptr;
-}
-
 Component* Actor::addComponent(Component* component)
 {
     Actor* owner = component->getOwner();
@@ -108,47 +94,6 @@ bool Actor::removeComponent(Component* component)
     else
     {
         delete[] newArray;
-    }
-
-    return componentRemoved;
-}
-
-bool Actor::removeComponent(const char* componentName)
-{
-    if (!componentName)
-    {
-        return false;
-    }
-
-    bool componentRemoved = false;
-    Component* componentToDelete = nullptr;
-
-    // Create a new array that's size is one less than the old array
-    Component** newArray = new Component * [m_componentCount - 1];
-
-    //Create variable to access tempArray index
-    int j = 0;
-
-    //Copy values from old array to new array
-    for (int i = 0; i < m_componentCount; i++)
-    {
-        if (strcmp(m_components[i]->getName(), componentName) == 0)
-        {
-            newArray[j] = m_components[i];
-            j++;
-        }
-        else
-        {
-            componentRemoved = true;
-            componentToDelete = m_components[i];
-        }
-    }
-
-    if (componentRemoved)
-    {
-        m_components = newArray;
-        m_componentCount--;
-        delete componentToDelete;
     }
 
     return componentRemoved;
